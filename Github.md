@@ -1,0 +1,1 @@
+I learned about pull requests. It's basically when you branch out of the main branch of the code and have made some changes and then you want those changes to be incorporated into the main branch "merging". After committing in the other branch you can create a pull request to merge the two branches. After that you can delete the off branch. 

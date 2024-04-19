@@ -1,0 +1,14 @@
+When using computers, text is shown to us like it's in a piece of paper, with each sentence continuing underneath. However, for the computers they read the contents of a file in a single line. They can do that but it is more useful for us to continue sentences underneath the previous sentences and like wise it is more useful for the computers to treat the contents of the file as a single line of data.
+However, when it's time to show the text on the screen, the computer needs to know where to put the characters on the screen, otherwise it will just print it out on a single line and you'd have to keep scrolling to read the text. So we use a combination of characters to tell the computer when to go to the next line. and whenever it's laying out the contents on the screen and encounters one of those special characters it will go down to the beginning of the next line and repeat the process until the end of the file. 
+These special characters come in many names and forms. We'll talk about the carriage return, line feed, and form feed characters because it's only those 3 that I know. But maybe there are more of those out there. To understand more about these characters it's useful to go back to its origins. Back in the early days of of computers, there existed these printers, and whenever they needed to go to the next line they used the carriage return and line feed characters. 
+- The carriage return - moves the printer head to the left most position
+- The line feed - moves the printer head down to the next line
+Now that makes a lot more sense to me why they are named that way. 
+
+On windows they use both the carriage return and line feed at the end of lines. On Unix, Mac and Linux operating systems, they just use the line feed character. So there is a mismatch between these operating systems if they try to read each other's files. This is where git's core.autocrlf comes in handy, since people working on a project might have different operating systems in use. Git's autocrlf modifies these end of lines so that the files don't become unreadable to the computers. 
+
+The people who worked on windows decided to use both characters so that they could send the file directly to the printer. Which needed both the LF and CR characters.
+
+While the people who worked on windows decided to only use the line feed character to save space, since hardware memory were still small back in their days. This convention was also followed by operating systems coming from Unix. When printing, the driver of the printer would just convert that Line Feed character to the characters needed for the printer to do its job. So there is a process in between printing Unix files. Unlike windows files that can just be sent directly to the printer.
+
+This has gone to become a lot more than 300 words so I need to break it down and focus on the topic. I think I'll even write more about other topics related to this.
